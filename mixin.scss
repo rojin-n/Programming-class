@@ -1,0 +1,37 @@
+@use "sass:math";
+
+
+
+@function px2rem($input) {
+  @return unquote(math.div($input, 8)+ 'rem');
+}
+
+@mixin prjbox {
+  border-radius: 5px;
+  border: 1px;
+  font-size: 16px;
+  background-color: rgb(59, 72, 57);
+}
+
+.button_box {
+  @include prjbox;
+}
+
+.button-basic {
+  border: none;
+  padding: 15px 30px;
+  text-align: center;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.button-report {
+  @extend .button-basic;
+  background-color: red;
+}
+
+.button-submit {
+  @extend .button-basic;
+  background-color: green;
+  color: white;
+}
